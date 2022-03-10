@@ -72,6 +72,8 @@ flutter:
   - assets/images/jadwal.png
   - assets/images/hasil.png
   - assets/images/pilketos.png
+  - assets/images/user.jpg
+  - assets/images/home-bg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

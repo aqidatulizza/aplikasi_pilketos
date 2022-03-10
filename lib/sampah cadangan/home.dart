@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:pilketos/sampah%20cadangan/yaaa.dart';
 import 'package:pilketos/shared/shared.dart';
 import 'package:pilketos/welcome-pilketos.dart';
 
@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
           ),
           SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -59,6 +59,7 @@ class _HomeState extends State<Home> {
                         if (value == 0) {
                           print("Profil belum dibuat");
                         } else if (value == 1) {
+                          onPressed:
                           () {
                             Navigator.push(
                               context,
@@ -100,134 +101,63 @@ class _HomeState extends State<Home> {
                     height: size.height * .08,
                   ),
                   Wrap(
+                    spacing: 20,
+                    runSpacing: 20,
                     children: <Widget>[
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Container(
-                          decoration:
-                              BoxDecoration(color: whiteColor, boxShadow: [
-                            BoxShadow(
-                                offset: Offset(0, 17),
-                                blurRadius: 23,
-                                spreadRadius: -13,
-                                color: Colors.grey)
-                          ]),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (BuildContext context) =>
-                                          Kandidat()),
-                                );
-                              },
-                              radius: 23,
-                              child: Padding(
-                                padding: EdgeInsets.all(12.0),
-                                child: Row(
-                                  children: <Widget>[
-                                    Container(
-                                      height: 80,
-                                      width: 80,
-                                      child: Image(
-                                        image: AssetImage(
-                                            "assets/images/voteicon.png"),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Text(
-                                      "Kandidat Ketua Osis",
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: size.height * .015,
-                  ),
-                  Wrap(
-                    children: <Widget>[
-                      GridView.count(
-                        crossAxisCount: 2,
-                        childAspectRatio: 1,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        shrinkWrap: true,
-                        children: <Widget>[
-                          Jadwal(
-                            title: "Jadwal Pilketos",
-                            iconSrc: 'assets/images/jadwal.png',
-                            press: () {},
-                          ),
-                          Jadwal(
-                            title: "Hasil Pilketos",
-                            iconSrc: 'assets/images/hasil.png',
-                            press: () {},
-                          ),
-                        ],
+                      SessionCard(
+                        sessionNum: 1,
+                      ),
+                      SessionCard(
+                        sessionNum: 2,
                       ),
                     ],
                   ),
-                  SizedBox(height: size.height * .04),
-                  Text(
-                    "Info Sekolah",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                  ),
-                  SizedBox(
-                    height: size.height * .02,
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    height: 90,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(0, 17),
-                              blurRadius: 23,
-                              spreadRadius: -13,
-                              color: Colors.grey)
-                        ]),
-                    child: Row(
+                  Expanded(
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      childAspectRatio: .75,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
                       children: <Widget>[
-                        Image.asset(
-                          "assets/images/logo-grafika.png",
-                          height: 60,
+                        Jadwal(
+                          title: "Kandidat Ketua Osis",
+                          iconSrc: 'assets/images/voteicon.png',
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) => Yaaa()),
+                            );
+                          },
                         ),
-                        SizedBox(
-                          width: size.width * .01,
+                        Jadwal(
+                          title: "Jadwal Pilketos",
+                          iconSrc: 'assets/images/jadwal.png',
+                          press: () {},
                         ),
-                        Expanded(
-                          child: Text(
-                            "SMK Negeri 4 Malang",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
-                          ),
+                        Jadwal(
+                          title: "Hasil Pilketos",
+                          iconSrc: 'assets/images/hasil.png',
+                          press: () {},
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(8),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.grey,
-                            size: 20.0,
-                          ),
+                        Jadwal(
+                          title: "Info Sekolah",
+                          iconSrc: 'assets/images/pilketos.png',
+                          press: () {},
+                        ),
+                        Jadwal(
+                          title: "Hasil Pilketos",
+                          iconSrc: 'assets/images/hasil.png',
+                          press: () {},
+                        ),
+                        Jadwal(
+                          title: "Info Sekolah",
+                          iconSrc: 'assets/images/pilketos.png',
+                          press: () {},
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -235,6 +165,53 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
+  }
+}
+
+class SessionCard extends StatelessWidget {
+  final int sessionNum;
+
+  const SessionCard({
+    Key? key,
+    required this.sessionNum,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, constraint) {
+      return Container(
+        padding: EdgeInsets.all(8.0),
+        width: constraint.maxWidth / 2 - 10,
+        decoration: BoxDecoration(
+            color: whiteColor,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                  offset: Offset(0, 17),
+                  blurRadius: 23,
+                  spreadRadius: -13,
+                  color: Colors.grey)
+            ]),
+        child: Row(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Container(
+                height: 50,
+                width: 50,
+                child: Image(
+                  image: AssetImage("assets/images/voteicon.png"),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 1,
+            ),
+            Text("Kandidat \nKetua Osis"),
+          ],
+        ),
+      );
+    });
   }
 }
 
@@ -277,9 +254,10 @@ class Jadwal extends StatelessWidget {
                   Spacer(),
                   Image.asset(
                     iconSrc,
-                    height: 80,
+                    height: 100,
                     fit: BoxFit.fill,
                   ),
+                  Spacer(),
                   Text(
                     title,
                     style: TextStyle(
