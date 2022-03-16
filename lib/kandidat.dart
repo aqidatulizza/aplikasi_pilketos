@@ -10,7 +10,7 @@ class Kandidat extends StatefulWidget {
 
 class _KandidatState extends State<Kandidat> {
   List nama = [
-    "llllllllllllllllllllll",
+    "SI A",
     "SI B",
     "SI C",
     "SI D",
@@ -44,12 +44,8 @@ class _KandidatState extends State<Kandidat> {
           'Kandidat Ketua Osis',
           style: TextStyle(color: Colors.white, fontSize: 18.0),
         ),
+        iconTheme: IconThemeData(color: Colors.white),
         centerTitle: true,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.white,
-          size: 28.0,
-        ),
       ),
       body: ListView.builder(
         itemCount: 10,
@@ -69,76 +65,37 @@ class _KandidatState extends State<Kandidat> {
                   children: <Widget>[
                     Container(
                       width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 10.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                width: 55.0,
-                                height: 55.0,
-                                child: CircleAvatar(
-                                  backgroundColor: primaryColor,
-                                  foregroundColor: primaryColor,
-                                  radius: 50.0,
-                                  child: ClipRRect(
-                                    child:
-                                        Image.asset('assets/images/user.jpg'),
-                                    borderRadius: BorderRadius.circular(50.0),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    nama[index],
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                  Text(
-                                    kelas[index],
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 14.0,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          Container(
-                            alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 10.0, vertical: 10.0),
-                            // ignore: deprecated_member_use
-                            child: FlatButton(
-                              height: 30.0,
-                              onPressed: () {},
-                              color: Color(0xfffB33030),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20.0)),
-                              child: Text(
-                                'Vote',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 13.0),
-                              ),
+                      padding: EdgeInsets.symmetric(vertical: 10.0),
+                      child: ListTile(
+                        title: Text(
+                          nama[index],
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 15),
+                        ),
+
+                        subtitle: Padding(
+                          padding: const EdgeInsets.only(top: 4),
+                          child: Text(kelas[index]),
+                        ),
+                        leading: CircleAvatar(), //awalan pada circle image
+                        trailing: Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 0.0, vertical: 10.0),
+                          // ignore: deprecated_member_use
+                          child: FlatButton(
+                            height: 30.0,
+                            onPressed: () {},
+                            color: Color(0xfffB33030),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0)),
+                            child: Text(
+                              'Vote',
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 13.0),
                             ),
                           ),
-                        ],
+                        ),
                       ),
                     ),
                     ListView.builder(

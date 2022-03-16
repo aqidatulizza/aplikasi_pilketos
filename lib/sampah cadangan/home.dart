@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pilketos/admin/admin.dart';
+import 'package:pilketos/admin/dashboard.dart';
 import 'package:pilketos/sampah%20cadangan/yaaa.dart';
 import 'package:pilketos/shared/shared.dart';
 import 'package:pilketos/welcome-pilketos.dart';
@@ -133,7 +135,13 @@ class _HomeState extends State<Home> {
                         Jadwal(
                           title: "Jadwal Pilketos",
                           iconSrc: 'assets/images/jadwal.png',
-                          press: () {},
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) => Admin()),
+                            );
+                          },
                         ),
                         Jadwal(
                           title: "Hasil Pilketos",

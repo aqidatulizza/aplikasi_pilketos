@@ -3,33 +3,31 @@ import 'package:pilketos/shared/shared.dart';
 
 import '../welcome-pilketos.dart';
 
-class Yaaa extends StatefulWidget {
-  const Yaaa({Key? key}) : super(key: key);
+class Dashboard extends StatefulWidget {
+  const Dashboard({Key? key}) : super(key: key);
 
   @override
-  _YaaaState createState() => _YaaaState();
+  _DashboardState createState() => _DashboardState();
 }
 
-class _YaaaState extends State<Yaaa> {
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Text(
-                "Pilketos Grafika",
-              ),
-            ],
-          ),
+    return Scaffold(
+      backgroundColor: Color(0xFFF7F7F7),
+      appBar: AppBar(
+        backgroundColor: primaryColor,
+        automaticallyImplyLeading: false,
+        title: Text(
+          'Pilketos Grafika',
+          style: TextStyle(color: Colors.white, fontSize: 19),
+        ),
+        actions: [
           PopupMenuButton(
             icon: Icon(
-              Icons.account_circle_rounded,
+              Icons.manage_accounts_rounded,
               color: Colors.white,
-              size: 34.0,
+              size: 30.0,
             ),
             itemBuilder: (context) {
               return [
