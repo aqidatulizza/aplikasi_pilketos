@@ -43,7 +43,7 @@ class _AdminKandidatState extends State<AdminKandidat> {
       appBar: AppBar(
         backgroundColor: primaryColor,
         title: Text(
-          'User',
+          'Kandidat Ketua Osis',
           style: TextStyle(color: Colors.white, fontSize: 19),
         ),
         iconTheme: IconThemeData(color: Colors.white),
@@ -130,7 +130,8 @@ class _AdminKandidatState extends State<AdminKandidat> {
                             nama[index],
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(fontSize: 15),
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
                           ),
 
                           subtitle: Padding(
@@ -144,19 +145,18 @@ class _AdminKandidatState extends State<AdminKandidat> {
                           ), //awalan pada circle image
                           trailing: Container(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 0.0, vertical: 10.0),
+                                horizontal: 10.0, vertical: 10.0),
                             // ignore: deprecated_member_use
-                            child: FlatButton(
-                              height: 30.0,
-                              onPressed: () {},
-                              color: Color(0xfffB33030),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20.0)),
-                              child: Text(
-                                'Vote',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 13.0),
-                              ),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                              color: Color(0xFFF7F7F7),
+                            ),
+                            child: Text(
+                              '0',
+                              style: TextStyle(
+                                  color: Colors.black, fontSize: 13.0),
                             ),
                           ),
                         ),

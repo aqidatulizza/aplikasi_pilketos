@@ -71,7 +71,8 @@ class _KandidatState extends State<Kandidat> {
                           nama[index],
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontSize: 15),
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold),
                         ),
 
                         subtitle: Padding(

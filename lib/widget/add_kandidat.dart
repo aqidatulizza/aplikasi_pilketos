@@ -87,7 +87,17 @@ class _AddKandidatState extends State<AddKandidat> {
             labelText: '''Misi''',
           ),
         ),
-
+        SizedBox(
+          height: 20,
+        ),
+        TextFormField(
+          maxLines: 1,
+          initialValue: "0",
+          decoration: InputDecoration(
+            border: UnderlineInputBorder(),
+            labelText: 'Vote',
+          ),
+        ),
         SizedBox(
           height: 40,
         ),
