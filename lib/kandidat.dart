@@ -78,7 +78,10 @@ class _KandidatState extends State<Kandidat> {
                           padding: const EdgeInsets.only(top: 4),
                           child: Text(kelas[index]),
                         ),
-                        leading: CircleAvatar(), //awalan pada circle image
+                        leading: CircleAvatar(
+                          radius: 30.0,
+                          backgroundImage: AssetImage("assets/images/user.jpg"),
+                        ), //awalan pada circle image
                         trailing: Container(
                           padding: EdgeInsets.symmetric(
                               horizontal: 0.0, vertical: 10.0),
@@ -129,7 +132,12 @@ final List<Entry> data = <Entry>[
           'Membentuk OSIS yang mampu mewadahi kreasi, inovasi, serta prestasi siswa di berbagai bidang dengan tetap menjunjung karakter berakhlak mulia.')
     ]),
     Entry('Misi', <Entry>[
-      Entry('Misi 1'),
+      Entry(''' 
+      1. Misi 1 
+      2. Misi 2 
+      3. Misi 3 
+      4. Misi 4
+      '''),
     ])
   ])
 ];

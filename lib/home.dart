@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:pilketos/admin/admin-jadwal.dart';
-import 'package:pilketos/admin/admin.dart';
-import 'package:pilketos/admin/dashboard.dart';
+import 'package:pilketos/admin/admin-kandidat.dart';
 import 'package:pilketos/admin/admin-user.dart';
 import 'package:pilketos/shared/shared.dart';
 import 'package:pilketos/welcome-pilketos.dart';
-
+import 'jadwal.dart';
 import 'kandidat.dart';
 
 class Home extends StatefulWidget {
@@ -183,7 +181,7 @@ class _HomeState extends State<Home> {
                           shrinkWrap: true,
                           primary: false,
                           children: <Widget>[
-                            Jadwal(
+                            Menu(
                               title: "Jadwal Pilketos",
                               iconSrc: 'assets/images/jadwal.png',
                               press: () {
@@ -191,14 +189,21 @@ class _HomeState extends State<Home> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          AdminUser()),
+                                          JadwalPilketos()),
                                 );
                               },
                             ),
-                            Jadwal(
+                            Menu(
                               title: "Hasil Pilketos",
                               iconSrc: 'assets/images/hasil.png',
-                              press: () {},
+                              press: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          AdminKandidat()),
+                                );
+                              },
                             ),
                           ],
                         ),
@@ -230,7 +235,14 @@ class _HomeState extends State<Home> {
                         child: Material(
                           color: Colors.transparent,
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        AdminUser()),
+                              );
+                            },
                             radius: 23,
                             child: Padding(
                               padding: EdgeInsets.all(15),
@@ -277,11 +289,11 @@ class _HomeState extends State<Home> {
   }
 }
 
-class Jadwal extends StatelessWidget {
+class Menu extends StatelessWidget {
   final String iconSrc;
   final String title;
   final Function() press;
-  const Jadwal({
+  const Menu({
     Key? key,
     required this.iconSrc,
     required this.title,

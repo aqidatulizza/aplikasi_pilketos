@@ -9,8 +9,6 @@ class EditUser extends StatefulWidget {
 }
 
 class _EditUserState extends State<EditUser> {
-  int currentValue = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
